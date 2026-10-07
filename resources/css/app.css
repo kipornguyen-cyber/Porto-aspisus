@@ -1,0 +1,828 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../views/**/*.blade.php';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-serif: Georgia, 'Times New Roman', serif;
+    --color-paper: #f5f4ef;
+    --color-ink: #20231f;
+    --color-lime: #c9ee79;
+    --color-orange: #e36f4e;
+}
+
+:root {
+    color-scheme: light;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+
+body {
+    min-width: 320px;
+}
+
+::selection {
+    color: #20231f;
+    background: #c9ee79;
+}
+
+.section-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    color: rgb(32 35 31 / 55%);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.section-kicker span {
+    color: #e36f4e;
+    font-variant-numeric: tabular-nums;
+}
+
+.portrait-stage {
+    isolation: isolate;
+}
+
+.portrait-orbit {
+    z-index: -2;
+}
+
+.portrait-grid {
+    z-index: -1;
+    background-image: radial-gradient(rgb(32 35 31 / 12%) 0.8px, transparent 0.8px);
+    background-position: 0 0;
+    background-size: 17px 17px;
+    mask-image: radial-gradient(ellipse, #000 38%, transparent 75%);
+}
+
+.portrait-image {
+    max-height: 570px;
+    object-fit: contain;
+    object-position: bottom;
+}
+
+.ticker-track {
+    min-height: 3.75rem;
+}
+
+.school-art,
+.therapy-art {
+    display: grid;
+    align-items: center;
+}
+
+.mini-site {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 510px;
+    height: 230px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid rgb(32 35 31 / 8%);
+    border-radius: 0.9rem;
+    background: #fffefa;
+    box-shadow: 0 18px 40px rgb(36 45 28 / 15%);
+    color: #253026;
+    font-family: var(--font-sans);
+    transform: translateY(-1px);
+}
+
+.school-site {
+    --school-green: #537747;
+    --school-forest: #264c3d;
+    --school-cream: #fffef8;
+}
+
+.mini-site-nav {
+    display: flex;
+    height: 35px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    border-bottom: 1px solid rgb(37 48 38 / 8%);
+    padding: 0 13px;
+}
+
+.mini-site-brand {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 6px;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.035em;
+    line-height: 1.15;
+}
+
+.mini-site-brand small {
+    display: block;
+    margin-top: 2px;
+    color: rgb(37 48 38 / 48%);
+    font-size: 5px;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.school-crest,
+.therapy-crest {
+    display: grid;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    place-items: center;
+    border-radius: 0.4rem;
+    background: #e6edda;
+    color: #49683d;
+    font-family: Georgia, serif;
+    font-size: 11px;
+}
+
+.mini-site-links {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: rgb(37 48 38 / 65%);
+    font-size: 6px;
+}
+
+.mini-site-nav-cta,
+.therapy-nav-cta {
+    flex-shrink: 0;
+    border-radius: 9999px;
+    background: #426647;
+    padding: 6px 9px;
+    color: white;
+    font-size: 6px;
+    font-weight: 600;
+}
+
+.school-hero,
+.therapy-hero {
+    display: grid;
+    height: 150px;
+    grid-template-columns: 1fr 0.94fr;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 16px 8px;
+}
+
+.school-copy,
+.therapy-copy {
+    position: relative;
+    z-index: 2;
+}
+
+.mini-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #638052;
+    font-size: 5px;
+    font-weight: 700;
+    letter-spacing: 0.11em;
+}
+
+.mini-eyebrow i {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #9abd68;
+}
+
+.school-copy h4,
+.therapy-copy h4 {
+    margin-top: 6px;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.07em;
+    line-height: 0.99;
+}
+
+.school-copy h4 em,
+.therapy-copy h4 em {
+    color: #648153;
+    font-family: Georgia, serif;
+    font-weight: 400;
+}
+
+.school-copy > p,
+.therapy-copy > p {
+    max-width: 175px;
+    margin-top: 6px;
+    color: rgb(37 48 38 / 62%);
+    font-size: 6px;
+    line-height: 1.55;
+}
+
+.mini-site-actions {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 8px;
+}
+
+.school-button,
+.therapy-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border-radius: 9999px;
+    background: #426647;
+    padding: 6px 9px;
+    color: white;
+    font-size: 6px;
+    font-weight: 600;
+}
+
+.school-button b,
+.therapy-button b,
+.facts-note b,
+.therapy-more b {
+    color: #d6eea4;
+}
+
+.school-secondary {
+    color: rgb(37 48 38 / 70%);
+    font-size: 6px;
+    font-weight: 600;
+}
+
+.school-scene {
+    position: relative;
+    height: 112px;
+    overflow: hidden;
+    border-radius: 48% 48% 11px 11px;
+    background: linear-gradient(180deg, #e9f0dd 0%, #f4edcf 67%, #c8d29d 67%, #b6c584 100%);
+}
+
+.scene-sun {
+    position: absolute;
+    top: 12px;
+    right: 23px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #f2cf7e;
+}
+
+.scene-cloud {
+    position: absolute;
+    z-index: 1;
+    height: 5px;
+    border-radius: 9999px;
+    background: rgb(255 255 255 / 80%);
+}
+
+.cloud-one {
+    top: 26px;
+    left: 14px;
+    width: 29px;
+}
+
+.cloud-two {
+    top: 39px;
+    right: 11px;
+    width: 20px;
+}
+
+.scene-hill {
+    position: absolute;
+    right: -19px;
+    bottom: 15px;
+    width: 125px;
+    height: 39px;
+    border-radius: 60% 55% 0 0;
+    background: #a9bb77;
+    transform: rotate(-8deg);
+}
+
+.hill-two {
+    right: auto;
+    bottom: 11px;
+    left: -32px;
+    width: 124px;
+    height: 32px;
+    background: #829f65;
+    transform: rotate(9deg);
+}
+
+.campus-building {
+    position: absolute;
+    z-index: 2;
+    right: 31px;
+    bottom: 17px;
+    width: 66px;
+    height: 50px;
+}
+
+.building-roof {
+    position: absolute;
+    top: 0;
+    left: -7px;
+    width: 80px;
+    height: 15px;
+    background: #8d654c;
+    clip-path: polygon(9% 100%, 50% 0, 91% 100%);
+}
+
+.building-face {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    height: 39px;
+    justify-content: space-evenly;
+    padding: 6px 6px 0;
+    background: #f9f2db;
+}
+
+.building-face i {
+    width: 8px;
+    height: 10px;
+    border: 2px solid #91a474;
+    background: #d8e1c0;
+}
+
+.building-face b {
+    position: absolute;
+    bottom: 0;
+    left: 27px;
+    width: 12px;
+    height: 21px;
+    border-radius: 6px 6px 0 0;
+    background: #a98263;
+}
+
+.scene-tree {
+    position: absolute;
+    z-index: 3;
+    bottom: 20px;
+    left: 21px;
+    width: 18px;
+    height: 31px;
+    border-radius: 55% 55% 30% 30%;
+    background: #63845d;
+}
+
+.scene-tree::after {
+    position: absolute;
+    bottom: -5px;
+    left: 7px;
+    width: 4px;
+    height: 9px;
+    background: #8c6a4f;
+    content: '';
+}
+
+.tree-two {
+    bottom: 20px;
+    left: auto;
+    width: 14px;
+    height: 24px;
+    background: #879d68;
+}
+
+.tree-two::after {
+    left: 5px;
+}
+
+.scene-label {
+    position: absolute;
+    z-index: 4;
+    bottom: 7px;
+    left: 9px;
+    color: #fffef8;
+    font-size: 4px;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-shadow: 0 1px 4px rgb(30 55 34 / 50%);
+}
+
+.school-facts {
+    display: flex;
+    height: 39px;
+    align-items: center;
+    gap: 12px;
+    border-top: 1px solid rgb(37 48 38 / 8%);
+    background: #fbfaf4;
+    padding: 0 16px;
+}
+
+.school-facts > span:not(.facts-note) {
+    display: grid;
+    gap: 1px;
+}
+
+.school-facts > span b {
+    color: #426647;
+    font-size: 9px;
+    line-height: 1;
+}
+
+.school-facts small {
+    color: rgb(37 48 38 / 58%);
+    font-size: 5px;
+}
+
+.school-facts > i {
+    width: 1px;
+    height: 16px;
+    background: rgb(37 48 38 / 12%);
+}
+
+.school-facts .facts-note {
+    margin-left: auto;
+    color: rgb(37 48 38 / 57%);
+    font-size: 5px;
+}
+
+.therapy-site {
+    --therapy-rose: #a86f5e;
+    --therapy-ink: #57483f;
+    background: #fffaf5;
+    color: var(--therapy-ink);
+}
+
+.therapy-crest {
+    border-radius: 50%;
+    background: #f0ded3;
+    color: #9d6758;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.therapy-site .mini-site-brand {
+    color: #59483d;
+    font-family: Georgia, serif;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+}
+
+.therapy-site .mini-site-brand small {
+    font-family: var(--font-sans);
+    font-size: 5px;
+    letter-spacing: 0.015em;
+}
+
+.therapy-site .mini-site-links {
+    color: rgb(87 72 63 / 67%);
+}
+
+.therapy-nav-cta,
+.therapy-button {
+    background: #a86f5e;
+}
+
+.therapy-copy .mini-eyebrow {
+    color: #a36d59;
+}
+
+.therapy-copy .mini-eyebrow i {
+    background: #d4a28d;
+}
+
+.therapy-copy h4 {
+    color: #56453d;
+    font-family: Georgia, serif;
+    font-size: 19px;
+    font-weight: 400;
+    letter-spacing: -0.055em;
+    line-height: 1.02;
+}
+
+.therapy-copy h4 em {
+    color: #a86f5e;
+}
+
+.therapy-copy > p {
+    max-width: 167px;
+    color: rgb(87 72 63 / 64%);
+}
+
+.therapy-button {
+    margin-top: 8px;
+}
+
+.therapy-button b {
+    color: #f6d8b9;
+}
+
+.therapy-assurance {
+    display: block;
+    margin-top: 6px;
+    color: rgb(87 72 63 / 62%);
+    font-size: 5px;
+}
+
+.therapy-artwork {
+    position: relative;
+    height: 121px;
+    overflow: hidden;
+    border-radius: 48% 48% 12px 12px;
+    background: #f3e1d4;
+}
+
+.therapy-sun {
+    position: absolute;
+    top: 13px;
+    right: 24px;
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    background: #e7c4a6;
+}
+
+.therapy-arch {
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 87px;
+    height: 99px;
+    border: 1px solid rgb(143 94 75 / 13%);
+    border-radius: 48px 48px 10px 10px;
+    background: linear-gradient(150deg, #d6a590 5%, #bd806e 96%);
+    box-shadow: 0 9px 24px rgb(114 70 58 / 11%);
+    transform: translateX(-45%);
+}
+
+.therapy-arch::before {
+    position: absolute;
+    top: 18px;
+    left: 30px;
+    width: 27px;
+    height: 34px;
+    border-radius: 48% 48% 45% 45%;
+    background: #f6dfcd;
+    content: '';
+}
+
+.therapy-arch::after {
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    width: 48px;
+    height: 41px;
+    border-radius: 45% 45% 10px 10px;
+    background: #f0d5c1;
+    content: '';
+}
+
+.artwork-stem {
+    position: absolute;
+    z-index: 2;
+    right: 23px;
+    bottom: 13px;
+    width: 2px;
+    height: 53px;
+    background: #828b66;
+    transform: rotate(18deg);
+}
+
+.artwork-leaf {
+    position: absolute;
+    z-index: 3;
+    width: 16px;
+    height: 8px;
+    border-radius: 90% 0 90% 0;
+    background: #8b9873;
+}
+
+.leaf-a {
+    right: 25px;
+    bottom: 57px;
+    transform: rotate(-28deg);
+}
+
+.leaf-b {
+    right: 10px;
+    bottom: 45px;
+    background: #a5a77d;
+    transform: rotate(153deg);
+}
+
+.leaf-c {
+    right: 30px;
+    bottom: 35px;
+    width: 14px;
+    background: #9ca47a;
+    transform: rotate(-28deg);
+}
+
+.leaf-d {
+    right: 6px;
+    bottom: 25px;
+    width: 13px;
+    background: #7d906f;
+    transform: rotate(153deg);
+}
+
+.therapy-art-caption {
+    position: absolute;
+    bottom: 8px;
+    left: 10px;
+    color: #7c5748;
+    font-family: Georgia, serif;
+    font-size: 7px;
+    font-style: italic;
+    line-height: 1.15;
+}
+
+.therapy-services {
+    display: flex;
+    height: 39px;
+    align-items: center;
+    gap: 11px;
+    border-top: 1px solid rgb(87 72 63 / 9%);
+    background: #fffdfa;
+    padding: 0 16px;
+}
+
+.therapy-services > span:not(.therapy-more) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    column-gap: 5px;
+}
+
+.therapy-services i {
+    grid-row: span 2;
+    color: #b57a64;
+    font-size: 7px;
+    font-style: normal;
+}
+
+.therapy-services b {
+    font-size: 6px;
+}
+
+.therapy-services small {
+    grid-column: 2;
+    color: rgb(87 72 63 / 57%);
+    font-size: 5px;
+}
+
+.therapy-more {
+    margin-left: auto;
+    color: rgb(87 72 63 / 72%);
+    font-size: 5px;
+}
+
+.therapy-more b {
+    color: #a86f5e;
+}
+
+@media (max-width: 640px) {
+    .mini-site-links {
+        gap: 6px;
+        font-size: 5px;
+    }
+
+    .facts-note,
+    .therapy-more {
+        display: none;
+    }
+}
+
+@media (min-width: 640px) {
+    .mini-site {
+        height: 245px;
+    }
+
+    .school-hero,
+    .therapy-hero {
+        height: 164px;
+        padding-right: 19px;
+        padding-left: 19px;
+    }
+
+    .school-scene {
+        height: 125px;
+    }
+
+    .therapy-artwork {
+        height: 130px;
+    }
+}
+
+.project-card {
+    box-shadow: 0 1px 0 rgb(32 35 31 / 4%);
+    transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 50px rgb(32 35 31 / 9%);
+}
+
+.project-tag {
+    border: 1px solid rgb(32 35 31 / 12%);
+    border-radius: 9999px;
+    padding: 0.4rem 0.7rem;
+    color: rgb(32 35 31 / 65%);
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.skill-card {
+    display: grid;
+    min-height: 170px;
+    grid-template-columns: auto 1fr auto;
+    align-items: start;
+    gap: 1rem;
+    border: 1px solid rgb(32 35 31 / 10%);
+    border-radius: 1.25rem;
+    background: rgb(255 255 255 / 45%);
+    padding: 1.25rem;
+    transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.skill-card:hover {
+    border-color: rgb(32 35 31 / 20%);
+    background: white;
+}
+
+.skill-number {
+    padding-top: 0.25rem;
+    color: #e36f4e;
+    font-size: 0.7rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+.skill-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.skill-card p {
+    margin-top: 0.55rem;
+    color: rgb(32 35 31 / 58%);
+    font-size: 0.8rem;
+    line-height: 1.6;
+}
+
+.skill-symbol {
+    color: rgb(32 35 31 / 35%);
+    font-size: 1.15rem;
+}
+
+.contact-panel {
+    isolation: isolate;
+}
+
+.contact-panel::after {
+    position: absolute;
+    z-index: -1;
+    right: 4%;
+    bottom: -190px;
+    width: 360px;
+    height: 360px;
+    border-radius: 9999px;
+    background: radial-gradient(circle, rgb(201 238 121 / 14%), transparent 68%);
+    content: '';
+}
+
+@media (max-width: 767px) {
+    .nav-menu[data-open='true'] {
+        position: absolute;
+        top: calc(100% + 1px);
+        right: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        border-bottom: 1px solid rgb(32 35 31 / 10%);
+        background: #f5f4ef;
+        padding: 0.5rem 1.25rem 1rem;
+    }
+
+    .nav-menu[data-open='true'] a {
+        padding-top: 0.85rem;
+        padding-bottom: 0.85rem;
+    }
+
+    .nav-menu[data-open='true'] a:last-child {
+        margin-top: 0.35rem;
+        text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
